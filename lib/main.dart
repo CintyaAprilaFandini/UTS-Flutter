@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_listview/service/tasklist.dart';
+import 'package:provider_listview/service/validation.dart';
+import 'package:provider_listview/service/database_service.dart';
+import 'package:provider_listview/page/updatetask.dart';
+import 'package:sqflite/sqlite_api.dart';
 
 import 'page/addtask.dart';
 import 'page/listpage.dart';
+import 'models/task.dart';
+
 
 void main() {
   runApp(
@@ -26,7 +32,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         "/": (context) => const MyListPage(),
-        "/addTask": (context) => const AddTaskPage(),
+        "/addTask": (context) => AddTaskPage(),
+        "/updatetask": (context) => const EditTaskPage(),
       },
       initialRoute: "/",
       title: 'Flutter Demo',
